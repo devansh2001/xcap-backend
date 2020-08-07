@@ -1,0 +1,61 @@
+questions:
+  - text: Imagine that APPLICATION_NAME is PERMISSION_REQUEST_CANONICALIZATION right at this moment. On a scale from 1 - 5, where 1 represents “not at all concerned“ and 5 represents “very concerned”, how concerned would you be about this access?
+    variables:
+      - APPLICATION_NAME
+      - PERMISSION_REQUEST_CANONICALIZATION
+    response:
+      - LIKERT_SCALE
+  - text: Among the list below, please check off words that describe your attitude towards this access.
+    response:
+      - CHECKBOXES
+    response_values:
+      - Enthusiastic
+      - Distressed
+      - Curious
+      - Indifferent
+      - Hostile
+      - Untroubled
+      - None of the above
+  - text: Now imagine that the application, APPLICATION_NAME, is PERMISSION_REQUEST_CANONICALIZATION in order to PURPOSE. On a scale from 1 - 5, where 1 represents “not at all concerned” and 5 represents “very concerned”, how concerned would you be about this access?
+    variables:
+      - APPLICATION_NAME
+      - PERMISSION_REQUEST_CANONICALIZATION
+      - PURPOSE
+    response:
+      - LIKERT_SCALE
+  - text: Which of the following restrictions would <b>reduce</b> your concern with this access? Please select all that apply
+    response:
+      - CHECKBOXES
+    response_values:
+      - Only if I am actively using the app
+      - Only while I'm at a pre-specified location (e.g., work, home)
+      - Only at a certain time of day (e.g., between 9am and 5pm)
+      - Only on certain days of the week (e.g., only on weekends)
+      - Only while I'm doing a certain activity (e.g., running, browsing the web)
+      - I am not concerned by this access in any context
+      - This app should never be able to have this acces'
+  - text: In a word or two, please describe your current location (e.g., home, work, coffeeshop, gym).
+    response:
+      - CHECKBOXES
+    response_values:
+      - Home
+      - Work
+      - Gym
+      - Friends
+      - Restaurant
+      - Store
+      - Car
+      - Public Transit
+      - Street
+  - text: In a word or two, please describe what you are currently doing (e.g., “working”, “exercising”, “socializing”)
+    response:
+      - CHECKBOXES
+    response_values:
+      - Commuting
+      - Errands
+      - Socializing
+      - Working
+      - Playing a game
+      - Resting
+      - Watching TV
+      - Exercising
