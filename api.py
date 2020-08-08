@@ -1,5 +1,6 @@
 from flask import Flask, request
 from flask_cors import CORS
+import json
 import QuestionsFactory
 
 app = Flask(__name__)
@@ -13,8 +14,9 @@ def test():
 @app.route('/get-questions', methods=['POST'])
 def get_questions():
     print("hey")
-    apps_and_permissions = request.data
-    factory = QuestionsFactory.QuestionsFactory(None)
+    apps_and_permissions = json.loads(request.data)
+    print(apps_and_permissions)
+    factory = QuestionsFactory.QuestionsFactory(apps_and_permissions)
     questions = factory.generate_questions()
     return questions
 
