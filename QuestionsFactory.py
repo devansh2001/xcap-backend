@@ -34,9 +34,12 @@ class QuestionsFactory:
                 print(variables)
                 text = self.produce_cleaned_question(text, variables)
 
+        for i in range(0, len(questions)):
+            data_dict['questions'][i]['question_id'] = 'question_' + str(i + 1)
 
         print("********")
         print(data_dict)
+
         return json.dumps(data_dict)
         
 
