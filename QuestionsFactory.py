@@ -35,7 +35,8 @@ class QuestionsFactory:
                 text = self.produce_cleaned_question(text, variables)
 
 
-
+        print("********")
+        print(data_dict)
         return json.dumps(data_dict)
         
 
