@@ -14,9 +14,12 @@ def test():
 @app.route('/get-questions', methods=['POST'])
 def get_questions():
     print("hey")
-    # apps_and_permissions = json.loads(request.data)
+    
+    apps_and_permissions = None
+    if request.data:
+        apps_and_permissions = json.loads(request.data)
     # print(apps_and_permissions)
-    factory = QuestionsFactory.QuestionsFactory(None)
+    factory = QuestionsFactory.QuestionsFactory(apps_and_permissions)
     questions = factory.generate_questions()
     return questions
 
