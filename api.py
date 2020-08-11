@@ -1,10 +1,15 @@
 from flask import Flask, request
 from flask_cors import CORS
 import json
+import pyrebase
 import QuestionsFactory
+from config import firebaseConfig
 
 app = Flask(__name__)
 CORS(app, support_credentials=True)
+
+firebase = pyrebase.initialize_app(firebaseConfig)
+database = firebase.database()
 
 @app.route('/')
 def test():
@@ -34,6 +39,9 @@ def submit_survey():
     
     print('Received data:')
     print(data)
+
+    database.child('test')
+    database.set(data)
 
     return {}
 
