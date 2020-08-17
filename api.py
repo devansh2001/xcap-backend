@@ -24,6 +24,7 @@ def get_questions():
     if request.data:
         apps_and_permissions = json.loads(request.data)
     # print(apps_and_permissions)
+    print(type(apps_and_permissions))
     factory = QuestionsFactory.QuestionsFactory(apps_and_permissions)
     questions = factory.generate_questions()
     return questions
@@ -33,12 +34,12 @@ def get_questions():
 def submit_survey():
     print('Hit Submit Survey Endpoint')
     data = None
-    print(request.data)
+    # print(request.data)
     if request.data:
         data = json.loads(request.data)
     
-    print('Received data:')
-    print(data)
+    # print('Received data:')
+    # print(data)
 
     database.child('test')
     database.set(data)
