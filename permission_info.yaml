@@ -1,0 +1,195 @@
+ACCESS_BACKGROUND_LOCATION:
+    - CANONICALIZATION: get your location while running in the background
+    - MALICIOUS: monitor your location at any time
+    - BENIGN: provide location-based customization
+
+ACCESS_COARSE_LOCATION:
+    - CANONICALIZATION: get your approximate location
+    - MALICIOUS: build a database of where you go
+    - BENIGN: provide location-based customization
+
+ACCESS_FINE_LOCATION:
+    - CANONICALIZATION: get your exact location
+    - MALICIOUS: build a database of where you go
+    - BENIGN: provide location-based customization
+
+ACTIVITY_RECOGNITION:
+    - CANONICALIZATION: detect your current physical activity
+    - MALICIOUS: learn about how active you are
+    - BENIGN: adapt its interface based on your activity
+
+BIND_ACCESSIBILITY_SERVICE:
+    - CANONICALIZATION:
+    - MALICIOUS:
+    - BENIGN:
+
+BIND_NOTIFICATION_LISTENER_SERVICE:
+    - CANONICALIZATION: see when you get new notifications
+    - MALICIOUS: cancel notifications from anti-virus apps
+    - BENIGN: make it easier to manage your notifications
+
+BIND_TEXT_SERVICE:
+    - CANONICALIZATION: track what you type
+    - MALICIOUS: profile your interests
+    - BENIGN: provide you with analytics of what you are interested in
+
+BLUETOOTH:
+    - CANONICALIZATION: connect to bluetooth
+    - MALICIOUS: automatically pair with an unknown nearby device
+    - BENIGN: pair your phone with a device you select
+
+BLUETOOTH_ADMIN:
+    - CANONICALIZATION: discover and pair with bluetooth devices
+    - MALICIOUS: record what other devices you own
+    - BENIGN: Set up an IoT device
+
+BODY_SENSORS:
+    - CANONICALIZATION: access wearable sensor data
+    - MALICIOUS: record and store your heart rate and other vitals
+    - BENIGN: provide you with analytics of your vitals
+
+CALL_PHONE:
+    - CANONICALIZATION: make phone calls
+    - MALICIOUS: Make robocalls using your phone number
+    - BENIGN: Allow a custom dialer to make calls
+
+CAMERA:
+    - CANONICALIZATION: access your camera
+    - MALICIOUS: take secret pictures of you through the day
+    - BENIGN: provide you with custom filters to apply to your photos
+
+GET_ACCOUNTS:
+    - CANONICALIZATION: retrieve list of authenticated application accounts on your phone
+    - MALICIOUS: obtain access to all accounts on your phone
+    - BENIGN: simplify logging into your apps
+
+GET_ACCOUNTS_PRIVILEGED:
+    - CANONICALIZATION: retrieve list of authenticated application accounts on your phone
+    - MALICIOUS: obtain access to all accounts on your phone
+    - BENIGN: simplify logging into your apps
+
+INTERNET:
+    - CANONICALIZATION: access the internet
+    - MALICIOUS: send your data to a remote server
+    - BENIGN: retrieve and deliver updates and other relevant information
+
+NFC:
+    - CANONICALIZATION: communicate over NFC transactions (e.g., tap-to-pay)
+    - MALICIOUS: inititiate tap-to-pay transactions with an unknown device
+    - BENIGN: simplify sending data to a device you select
+
+NFC_TRANSACTION_EVENT:
+    - CANONICALIZATION: listen for NFC transactions (e.g., tap-to-pay)
+    - MALICIOUS: hijack tap-to-pay transactions
+    - BENIGN: Rewards card app applies rewards when using tap-to-pay
+
+PACKAGE_USAGE_STATS:
+    - CANONICALIZATION: collect use statistics for an app component
+    - MALICIOUS: build a model of what types of other apps you like
+    - BENIGN: collect anonymized data to help improve the app
+
+READ_CALENDAR:
+    - CANONICALIZATION: view your calendar
+    - MALICIOUS: keep track of who you meet and what you do
+    - BENIGN: avoid interrupting when you are busy
+
+READ_CALL_LOG:
+    - CANONICALIZATION: view your call log
+    - MALICIOUS: keep track of who you call
+    - BENIGN: avoid interruptting when you are in a call
+
+READ_CONTACTS:
+    - CANONICALIZATION: view your contacts
+    - MALICIOUS: keep track of who you know
+    - BENIGN: connect you with people you know who also use the app
+
+READ_EXTERNAL_STORAGE:
+    - CANONICALIZATION: view the files on your device
+    - MALICIOUS: make a copy of your stored data (e.g., photos)
+    - BENIGN: access the data it previously stored
+
+READ_PHONE_NUMBERS:
+    - CANONICALIZATION: view your phone number(s)
+    - MALICIOUS: contact you with promotional advertisements
+    - BENIGN: send you security codes when needed
+
+READ_PHONE_STATE:
+    - CANONICALIZATION: view your phone provider, your number(s), the status of ongoing calls, and a list of phone accounts on the device
+    - MALICIOUS: Track phone calls as they are happening
+    - BENIGN: avoid interruptting when you are in a call
+
+READ_SMS:
+    - CANONICALIZATION: read your SMS messages
+    - MALICIOUS: Collect all your interpersonal texts
+    - BENIGN: Display texts in a third-party texting application
+
+RECEIVE_MMS:
+    - CANONICALIZATION: monitor your MMS messages
+    - MALICIOUS: Collect all your interpersonal texts
+    - BENIGN: Display texts in a third-party texting application
+
+RECEIVE_SMS:
+    - CANONICALIZATION: receive your SMS messages
+    - MALICIOUS: Collect all your interpersonal texts
+    - BENIGN: Display texts in a third-party texting application
+
+READ_VOICEMAIL:
+    - CANONICALIZATION: read your voicemails
+    - MALICIOUS: Surveille the messages left in your voicemail
+    - BENIGN: Transcribe your voicemail messages using AI
+
+RECORD_AUDIO:
+    - CANONICALIZATION: use your microphone to record audio
+    - MALICIOUS: Surveille your every-day interactions
+    - BENIGN: Implement a conversational assistant that has voice to text capabilities
+
+SMS_FINANCIAL_TRANSACTIONS:
+    - CANONICALIZATION: read only SMS messages from financial institutions
+    - MALICIOUS: Collect one time codes for financial two factor authentication
+    - BENIGN: A banking application automatically fills the two-factor authentication code texted to you
+
+SYSTEM_ALERT_WINDOW:
+    - CANONICALIZATION: create a window on top of your currently open application
+    - MALICIOUS: Make the phone unusable through constant pop-ups
+    - BENIGN: Allow for quick access to chat window without switching apps
+
+USE_SIP:
+    - CANONICALIZATION: use your unique Voice-Over-IP identifier
+    - MALICIOUS: Allow telephone scammars to make calls using your identitiy over VoIP
+    - BENIGN: Allow you to make calls with VoIP in an application
+
+WAKE_LOCK:
+    - CANONICALIZATION: keep your phone from going to sleep
+    - MALICIOUS: Drain your battery by keeping the screen on
+    - BENIGN: Allow a movie to play without the screen turning off
+
+WRITE_CALENDAR:
+    - CANONICALIZATION: write to your calendar
+    - MALICIOUS: Change or delete your appointments without your knowledge
+    - BENIGN: Allow event creation directly from launcher
+
+WRITE_CALL_LOG:
+    - CANONICALIZATION: write to your call log
+    - MALICIOUS: Mis-label a phone number to cause confusion
+    - BENIGN: Scan and label phone numbers as spam
+
+WRITE_CONTACTS:
+    - CANONICALIZATION: add or edit your phone's contacts
+    - MALICIOUS: Replace a contact's phone number with a fraudulent one for scamming
+    - BENIGN: Allow the addition of contacts from social media sites
+
+WRITE_EXTERNAL_STORAGE:
+    - CANONICALIZATION: write to your phone's storage
+    - MALICIOUS: Download malware to the file system
+    - BENIGN: Download cloud documents to the phone's local storage
+
+WRITE_SETTINGS:
+    - CANONICALIZATION: change your phone's settings
+    - MALICIOUS: Silence your phone and keep the screen on to execute malware covertly
+    - BENIGN: Allow settings to be changed directly from the launcher
+
+WRITE_VOICEMAIL:
+    - CANONICALIZATION: write to your device's voicemail
+    - MALICIOUS: Hold voicemails hostage
+    - BENIGN: Collect voicemails from different services into phone voicemail
+

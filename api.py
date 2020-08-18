@@ -3,6 +3,7 @@ from flask_cors import CORS
 import json
 import pyrebase
 import QuestionsFactory
+import datetime
 from config import firebaseConfig
 
 app = Flask(__name__)
@@ -41,7 +42,12 @@ def submit_survey():
     # print('Received data:')
     # print(data)
 
-    database.child('test')
+    save_object = {}
+    save_object['user_response'] = data
+    save_object['timestamp'] = datetime.datetime.now()
+
+
+    # database.child('test')
     database.set(data)
 
     return {}
