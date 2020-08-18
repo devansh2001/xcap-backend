@@ -1,4 +1,5 @@
 import json, yaml
+import ast
 from random import randint
 
 class QuestionsFactory: 
@@ -16,25 +17,62 @@ class QuestionsFactory:
     def choose_permission(self, app):
         if self.apps_and_permissions is None:
             return 'SAMPLE_PERMISSION'
-        values = list(self.apps_and_permissions.values())
+        values = self.apps_and_permissions[app]
+        print(values)
+        values = yaml.safe_load(values)
+        print(type(values))
+        print('----------Converted----------')
+        print(values)
+        if len(values) == 0:
+            return 'SAMPLE_PERMISSION'
         index = randint(0, len(values))
+        print(len(values))
+        print(index)
         print('Returning ---> ' + values[index])
         return values[index]
 
+    def choose_canonicalization(self, permission):
+        if self.apps_and_permissions is None or permission is None:
+            return 'SAMPLE_PERMISSION_REQUEST_CANONICALIZATION'
+        
+        data = None
+        with open(r'./permission_info.yaml') as file:
+            file = yaml.safe_load(file)
+            data_str = json.dumps(file, indent=2)
+        data_dict = json.loads(data_str)
+        return data_dict[permission]['CANONICALIZATION']
+
     def choose_benign_purpose(self, permission):
-        return 'SAMPLE_BENIGN_PURPOSE'
+        if self.apps_and_permissions is None or permission is None:
+            return 'SAMPLE_PERMISSION_REQUEST_CANONICALIZATION'
+        
+        data = None
+        with open(r'./permission_info.yaml') as file:
+            file = yaml.safe_load(file)
+            data_str = json.dumps(file, indent=2)
+        data_dict = json.loads(data_str)
+        return data_dict[permission]['BENIGN']
 
     def choose_malicious_purpose(self, permission):
-        return 'SAMPLE_MALICIOUS_PURPOSE'
+        if self.apps_and_permissions is None or permission is None:
+            return 'SAMPLE_PERMISSION_REQUEST_CANONICALIZATION'
+        
+        data = None
+        with open(r'./permission_info.yaml') as file:
+            file = yaml.safe_load(file)
+            data_str = json.dumps(file, indent=2)
+        data_dict = json.loads(data_str)
+        return data_dict[permission]['MALICIOUS']
 
     def produce_cleaned_question(self, text, variables):
         application = self.choose_application()
         permission = self.choose_permission(application)
+        canonicalization = self.choose_canonicalization(permission)
         purpose = self.choose_benign_purpose(permission)
         if 'APPLICATION_NAME' in variables:
             text = text.replace('APPLICATION_NAME', application)
         if 'PERMISSION_REQUEST_CANONICALIZATION' in variables:
-            text = text.replace('PERMISSION_REQUEST_CANONICALIZATION', permission)
+            text = text.replace('PERMISSION_REQUEST_CANONICALIZATION', canonicalization)
         if 'PURPOSE' in variables:
             text = text.replace('PURPOSE', purpose)
         print('Returning ---> ' + text)

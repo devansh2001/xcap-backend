@@ -1,5 +1,5 @@
 questions:
-  - text: Imagine that APPLICATION_NAME is requesting PERMISSION_REQUEST_CANONICALIZATION right at this moment. On a scale from 1 - 5, where 1 represents “not at all concerned“ and 5 represents “very concerned”, how concerned would you be about this access?
+  - text: Imagine that APPLICATION_NAME is PERMISSION_REQUEST_CANONICALIZATION right at this moment. On a scale from 1 - 5, where 1 represents “not at all concerned“ and 5 represents “very concerned”, how concerned would you be about this access?
     variables:
       - APPLICATION_NAME
       - PERMISSION_REQUEST_CANONICALIZATION
@@ -16,7 +16,7 @@ questions:
       - Hostile
       - Untroubled
       - None of the above
-  - text: Now imagine that the application, APPLICATION_NAME, is requesting PERMISSION_REQUEST_CANONICALIZATION in order to PURPOSE. On a scale from 1 - 5, where 1 represents “not at all concerned” and 5 represents “very concerned”, how concerned would you be about this access?
+  - text: Now imagine that the application, APPLICATION_NAME, is PERMISSION_REQUEST_CANONICALIZATION in order to PURPOSE. On a scale from 1 - 5, where 1 represents “not at all concerned” and 5 represents “very concerned”, how concerned would you be about this access?
     variables:
       - APPLICATION_NAME
       - PERMISSION_REQUEST_CANONICALIZATION
