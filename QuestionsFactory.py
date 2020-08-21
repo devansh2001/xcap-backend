@@ -5,6 +5,8 @@ from random import randint
 class QuestionsFactory: 
     def __init__(self, apps_and_permissions):
         self.apps_and_permissions = apps_and_permissions
+        if self.apps_and_permissions is not None:
+            self.apps_and_permissions.pop('PARTICIPANT_ID')
 
     def choose_application(self):
         if self.apps_and_permissions is None:
