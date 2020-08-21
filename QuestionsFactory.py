@@ -10,7 +10,7 @@ class QuestionsFactory:
         if self.apps_and_permissions is None:
             return 'SAMPLE_APPLICATION'
         keys = list(self.apps_and_permissions.keys())
-        index = randint(0, len(keys))
+        index = randint(0, len(keys) - 1)
         print('Returning ---> ' + keys[index])
         return keys[index]
 
@@ -25,7 +25,7 @@ class QuestionsFactory:
         print(values)
         if len(values) == 0:
             return 'SAMPLE_PERMISSION'
-        index = randint(0, len(values))
+        index = randint(0, len(values) - 1)
         print(len(values))
         print(index)
         print('Returning ---> ' + values[index])
