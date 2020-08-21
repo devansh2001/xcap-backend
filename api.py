@@ -47,8 +47,8 @@ def submit_survey():
     save_object['timestamp'] = datetime.datetime.now()
 
 
-    # database.child('test')
-    database.set(data['participant_id'])
+    database.child('test')
+    database.set(save_object)
 
     return {}
 
