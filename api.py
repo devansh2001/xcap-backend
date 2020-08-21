@@ -39,15 +39,15 @@ def submit_survey():
     if request.data:
         data = json.loads(request.data)
     
-    # print('Received data:')
-    # print(data)
+    print('Received data:')
+    print(data)
 
     save_object = {}
     save_object['user_response'] = data['data']
-    save_object['timestamp'] = datetime.datetime.now()
+    save_object['timestamp'] = str(datetime.datetime.now())
 
 
-    database.child('test')
+    database.child('another')
     database.set(save_object)
 
     return {}
