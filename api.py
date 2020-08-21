@@ -48,6 +48,8 @@ def submit_survey():
 
 
     database.child(data['participant_id'])
+    print(data['participant_id'])
+    print(save_object)
     database.set(save_object)
 
     return {}
