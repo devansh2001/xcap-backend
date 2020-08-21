@@ -46,14 +46,21 @@ def submit_survey():
     save_object['user_response'] = data['data']
     save_object['timestamp'] = str(datetime.datetime.now())
 
-
-    database.child(data['participant_id'])
     print(data['participant_id'])
     print(save_object)
-    database.set(save_object)
+    database.child(data['participant_id']).push(save_object)
 
     return {}
 
+some_id = 'unique_id_123'
+@app.route('/try-pyrebase')
+def try_pyrebase():
+    some_data = {
+        'name': 'ABC',
+        'age': 15
+    }
+    database.child(some_id).push(some_data)
+    return {}
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
