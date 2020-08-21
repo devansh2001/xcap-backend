@@ -43,7 +43,7 @@ class QuestionsFactory:
         return data_dict[permission]['CANONICALIZATION']
 
     def choose_benign_purpose(self, permission):
-        if self.apps_and_permissions is None or permission is None:
+        if self.apps_and_permissions is None or permission == 'SAMPLE_PERMISSION' or permission is None:
             return 'SAMPLE_PERMISSION_REQUEST_CANONICALIZATION'
         
         data = None
@@ -54,7 +54,7 @@ class QuestionsFactory:
         return data_dict[permission]['BENIGN']
 
     def choose_malicious_purpose(self, permission):
-        if self.apps_and_permissions is None or permission is None:
+        if self.apps_and_permissions is None or permission == 'SAMPLE_PERMISSION' or permission is None:
             return 'SAMPLE_PERMISSION_REQUEST_CANONICALIZATION'
         
         data = None
