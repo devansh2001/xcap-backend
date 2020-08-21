@@ -32,7 +32,7 @@ class QuestionsFactory:
         return values[index]
 
     def choose_canonicalization(self, permission):
-        if self.apps_and_permissions is None or permission is 'SAMPLE_PERMISSION' or permission is None:
+        if self.apps_and_permissions is None or permission == 'SAMPLE_PERMISSION' or permission is None:
             return 'SAMPLE_PERMISSION_REQUEST_CANONICALIZATION'
         
         data = None
