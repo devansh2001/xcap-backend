@@ -1,5 +1,5 @@
 questions:
-  - text: Imagine that APPLICATION_NAME is PERMISSION_REQUEST_CANONICALIZATION right at this moment. On a scale from 1 - 5, where 1 represents “not at all concerned“ and 5 represents “very concerned”, how concerned would you be about this access?
+  - text: Imagine that APPLICATION_NAME is trying to PERMISSION_REQUEST_CANONICALIZATION right at this moment. On a scale from 1 - 5, where 1 represents “not at all concerned“ and 5 represents “very concerned”, how concerned would you be about this access?
     variables:
       - APPLICATION_NAME
       - PERMISSION_REQUEST_CANONICALIZATION
@@ -16,14 +16,14 @@ questions:
       - Hostile
       - Untroubled
       - None of the above
-  - text: Now imagine that the application, APPLICATION_NAME, is PERMISSION_REQUEST_CANONICALIZATION in order to PURPOSE. On a scale from 1 - 5, where 1 represents “not at all concerned” and 5 represents “very concerned”, how concerned would you be about this access?
+  - text: Now imagine that the application, APPLICATION_NAME, is trying to PERMISSION_REQUEST_CANONICALIZATION in order to PURPOSE. On a scale from 1 - 5, where 1 represents “not at all concerned” and 5 represents “very concerned”, how concerned would you be about this access?
     variables:
       - APPLICATION_NAME
       - PERMISSION_REQUEST_CANONICALIZATION
       - PURPOSE
     response:
       - LIKERT_SCALE
-  - text: Which of the following restrictions would <b>reduce</b> your concern with this access? Please select all that apply
+  - text: Which of the following restrictions would reduce your concern with this access? Please select all that apply
     response:
       - CHECKBOXES
     response_values:
