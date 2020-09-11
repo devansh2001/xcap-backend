@@ -7,6 +7,11 @@ class QuestionsFactory:
         self.apps_and_permissions = apps_and_permissions
         if self.apps_and_permissions is not None:
             self.apps_and_permissions.pop('PARTICIPANT_ID')
+            self.chosen_application = 'SAMPLE_APPLICATION'
+            self.chosen_permission = 'SAMPLE_PERMISSION'
+        else:
+            self.chosen_application = self.choose_application()
+            self.chosen_permission = self.choose_permission(self.chosen_application)
 
     def choose_application(self):
         if self.apps_and_permissions is None:
@@ -67,12 +72,12 @@ class QuestionsFactory:
         return data_dict[permission]['MALICIOUS']
 
     def produce_cleaned_question(self, text, variables):
-        application = self.choose_application()
-        permission = self.choose_permission(application)
-        canonicalization = self.choose_canonicalization(permission)
-        purpose = self.choose_benign_purpose(permission)
+        # application = self.choose_application()
+        # permission = self.choose_permission(self.chosen_application)
+        canonicalization = self.choose_canonicalization(self.chosen_permission)
+        purpose = self.choose_benign_purpose(self.chosen_permission)
         if 'APPLICATION_NAME' in variables:
-            text = text.replace('APPLICATION_NAME', application)
+            text = text.replace('APPLICATION_NAME', self.chosen_application)
         if 'PERMISSION_REQUEST_CANONICALIZATION' in variables:
             text = text.replace('PERMISSION_REQUEST_CANONICALIZATION', canonicalization)
         if 'PURPOSE' in variables:
