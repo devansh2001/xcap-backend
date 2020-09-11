@@ -44,6 +44,8 @@ def submit_survey():
 
     save_object = {}
     save_object['user_response'] = data['data']
+    save_object['app'] = data['chosen_data']['app']
+    save_object['permission'] = data['chosen_data']['permission']
     save_object['timestamp'] = str(datetime.datetime.now())
 
     print(data['participant_id'])

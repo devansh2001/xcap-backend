@@ -112,6 +112,10 @@ class QuestionsFactory:
         for i in range(0, len(questions)):
             data_dict['questions'][i]['question_id'] = 'question_' + str(i + 1)
 
+        data_dict['chosen_data'] = {
+            'app': self.chosen_application,
+            'permission': self.chosen_permission
+        }
         print("********")
         print(data_dict)
 
