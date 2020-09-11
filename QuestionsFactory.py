@@ -7,11 +7,12 @@ class QuestionsFactory:
         self.apps_and_permissions = apps_and_permissions
         if self.apps_and_permissions is not None:
             self.apps_and_permissions.pop('PARTICIPANT_ID')
-            self.chosen_application = 'SAMPLE_APPLICATION'
-            self.chosen_permission = 'SAMPLE_PERMISSION'
-        else:
             self.chosen_application = self.choose_application()
             self.chosen_permission = self.choose_permission(self.chosen_application)
+        else:
+            self.chosen_application = 'SAMPLE_APPLICATION'
+            self.chosen_permission = 'SAMPLE_PERMISSION'
+            
 
     def choose_application(self):
         if self.apps_and_permissions is None:
