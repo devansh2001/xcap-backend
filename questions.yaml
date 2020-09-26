@@ -34,7 +34,7 @@ questions:
       - Only while I'm doing a certain activity (e.g., running, browsing the web)
       - I am not concerned by this access in any context
       - This app should never be able to have this acces'
-  - text: In a word or two, please describe your current location (e.g., home, work, coffeeshop, gym).
+  - text: In a word or two, please describe your current location (e.g., home, work, coffeeshop, gym)
     response:
       - CHECKBOXES
     response_values:
@@ -59,3 +59,6 @@ questions:
       - Resting
       - Watching TV
       - Exercising
+  - text: Please select the three images that best reflect your feelings about this permission request
+    response:
+      - MANIKIN
