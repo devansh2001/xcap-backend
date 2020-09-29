@@ -1,6 +1,7 @@
 import json, yaml
 import ast
 from random import randint
+from random import random
 
 class QuestionsFactory: 
     def __init__(self, apps_and_permissions):
@@ -72,11 +73,19 @@ class QuestionsFactory:
         data_dict = json.loads(data_str)
         return data_dict[permission]['MALICIOUS']
 
+    
+    def choose_purpose(self, permission):
+        chance = random()
+        if chance < 0.5:
+            return self.choose_benign_purpose(permission)
+        else:
+            return self.choose_malicious_purpose(permission)
+
     def produce_cleaned_question(self, text, variables):
         # application = self.choose_application()
         # permission = self.choose_permission(self.chosen_application)
         canonicalization = self.choose_canonicalization(self.chosen_permission)
-        purpose = self.choose_benign_purpose(self.chosen_permission)
+        purpose = self.choose_purpose(self.chosen_permission)
         if 'APPLICATION_NAME' in variables:
             text = text.replace('APPLICATION_NAME', self.chosen_application)
         if 'PERMISSION_REQUEST_CANONICALIZATION' in variables:
