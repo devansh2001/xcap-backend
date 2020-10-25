@@ -59,6 +59,6 @@ questions:
       - Resting
       - Watching TV
       - Exercising
-  - text: Please select the three images that best reflect your feelings about this permission request
+  - text: Please select an image from each of the three groups that best reflects your feelings about this permission request
     response:
       - MANIKIN
