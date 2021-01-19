@@ -42,13 +42,13 @@ def test():
 
 @app.route('/get-questions', methods=['POST'])
 def get_questions():
-    print("hey")
+    # print("hey")
     
     apps_and_permissions = None
     if request.data:
         apps_and_permissions = json.loads(request.data)
     # print(apps_and_permissions)
-    print(type(apps_and_permissions))
+    # print(type(apps_and_permissions))
     factory = QuestionsFactory.QuestionsFactory(apps_and_permissions)
     questions = factory.generate_questions()
     return questions
@@ -56,14 +56,14 @@ def get_questions():
 
 @app.route('/submit-survey', methods=['POST'])
 def submit_survey():
-    print('Hit Submit Survey Endpoint')
+    # print('Hit Submit Survey Endpoint')
     data = None
     # print(request.data)
     if request.data:
         data = json.loads(request.data)
     
-    print('Received data:')
-    print(data)
+    # print('Received data:')
+    # print(data)
 
     save_object = {}
     save_object['user_response'] = data['data']
@@ -71,8 +71,8 @@ def submit_survey():
     save_object['permission'] = data['chosen_data']['permission']
     save_object['timestamp'] = str(datetime.datetime.now())
 
-    print(data['participant_id'])
-    print(save_object)
+    # print(data['participant_id'])
+    # print(save_object)
     database.child(data['participant_id']).push(save_object)
 
     return {}

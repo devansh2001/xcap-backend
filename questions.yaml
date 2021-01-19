@@ -5,7 +5,7 @@ questions:
       - PERMISSION_REQUEST_CANONICALIZATION
     response:
       - LIKERT_SCALE
-  - text: Among the list below, please check off words that describe your attitude towards this access.
+  - text: Among the list below, please check off words that describe your attitude towards this access
     response:
       - CHECKBOXES
     response_values:

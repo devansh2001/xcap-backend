@@ -20,24 +20,24 @@ class QuestionsFactory:
             return 'SAMPLE_APPLICATION'
         keys = list(self.apps_and_permissions.keys())
         index = randint(0, len(keys) - 1)
-        print('Returning ---> ' + keys[index])
+        # print('Returning ---> ' + keys[index])
         return keys[index]
 
     def choose_permission(self, app):
         if self.apps_and_permissions is None:
             return 'SAMPLE_PERMISSION'
         values = self.apps_and_permissions[app]
-        print(values)
+        # print(values)
         values = yaml.safe_load(values)
-        print(type(values))
-        print('----------Converted----------')
-        print(values)
+        # print(type(values))
+        # print('----------Converted----------')
+        # print(values)
         if len(values) == 0:
             return 'SAMPLE_PERMISSION'
         index = randint(0, len(values) - 1)
-        print(len(values))
-        print(index)
-        print('Returning ---> ' + values[index])
+        # print(len(values))
+        # print(index)
+        # print('Returning ---> ' + values[index])
         return values[index]
 
     def choose_canonicalization(self, permission):
@@ -92,7 +92,7 @@ class QuestionsFactory:
             text = text.replace('PERMISSION_REQUEST_CANONICALIZATION', canonicalization)
         if 'PURPOSE' in variables:
             text = text.replace('PURPOSE', purpose)
-        print('Returning ---> ' + text)
+        # print('Returning ---> ' + text)
         return text
 
     def load_questions(self):
@@ -110,12 +110,12 @@ class QuestionsFactory:
 
             if 'variables' in question:
                 variables = question['variables']
-                print(variables)
+                # print(variables)
                 text = self.produce_cleaned_question(text, variables)
-                print(text)
+                # print(text)
                 question['text'] = text
                 questions[i] = question
-        print(questions)
+        # print(questions)
         data_dict['questions'] = questions
 
         for i in range(0, len(questions)):
@@ -125,8 +125,8 @@ class QuestionsFactory:
             'app': self.chosen_application,
             'permission': self.chosen_permission
         }
-        print("********")
-        print(data_dict)
+        # print("********")
+        # print(data_dict)
 
         return json.dumps(data_dict)
         
