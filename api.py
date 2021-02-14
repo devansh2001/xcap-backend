@@ -73,7 +73,7 @@ def submit_survey():
 
     # print(data['participant_id'])
     # print(save_object)
-    database.child(data['participant_id']).push(save_object)
+    database.child('data').child(data['participant_id']).push(save_object)
 
     return {}
 
